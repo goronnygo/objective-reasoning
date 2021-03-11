@@ -18,11 +18,17 @@ function getPlaylistLength(song){
     return song.songs.length;
 }
 
-function getHardestHomework(score){
-    if (score.length === 0){
+function getHardestHomework(arr){
+    if (arr.length === 0){
         return "";
     }
-
+    let lowest = arr[0];
+    for (let i = 1; i < arr.length; i++){
+        if(arr[i].averageScore < lowest.averageScore){
+            lowest = arr[i]
+        }
+    }
+    return lowest.name;
 }
 
 function createPhonebook(name,phone){
